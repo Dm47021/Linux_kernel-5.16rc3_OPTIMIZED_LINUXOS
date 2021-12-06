@@ -77,7 +77,8 @@ __read_mostly int sysctl_resched_latency_warn_once = 1;
 #ifdef CONFIG_PREEMPT_RT
 const_debug unsigned int sysctl_sched_nr_migrate = 8;
 #else
-const_debug unsigned int sysctl_sched_nr_migrate = 32;
+//DM47021 nr_migrate = 256 increases number of tasks to iterate in a single balance run
+const_debug unsigned int sysctl_sched_nr_migrate = 256;
 #endif
 
 /*
